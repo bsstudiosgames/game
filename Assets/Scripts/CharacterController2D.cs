@@ -19,6 +19,8 @@ public class CharacterController2D : MonoBehaviour
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
+    public bool IsGrounded => m_Grounded;
+
     [Header("Events")]
     [Space]
 
