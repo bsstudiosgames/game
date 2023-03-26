@@ -44,7 +44,6 @@ public class PlayerController2D : MonoBehaviour
         else if (Math.Abs(HorizontalMovement) > 0.01)
         {
             CurrentTrigger = RunTrigger;
-            Debug.Log(HorizontalMovement);
         }
         else
         {
@@ -52,6 +51,7 @@ public class PlayerController2D : MonoBehaviour
         }
     }
 
+    // Performs actions
     void FixedUpdate()
     {
         var movement = HorizontalMovement * Time.fixedDeltaTime;
