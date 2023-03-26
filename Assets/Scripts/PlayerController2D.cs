@@ -1,55 +1,67 @@
+#nullable enable
+
+using System;
 using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
 {
-    public CharacterController2D CharacterController;
-    public Animator Animator;
+    public CharacterController2D CharacterController = default!;
+    public Animator Animator = default!;
     public float RunSpeed = 50f;
 
-    private const string IDLE_ANIMATION = "Idle";
+    private const string IdleTrigger = nameof(IdleTrigger);
+    private const string RunTrigger = nameof(RunTrigger);
+    private const string JumpTrigger = nameof(IdleTrigger);
+    private const string CrouchTrigger = nameof(IdleTrigger);
 
+    private string LastTrigger = string.Empty;
+    private string CurrentTrigger = string.Empty;
     private float HorizontalMovement = 0f;
-    private bool IsCrouch = false;
+    private bool IsCrouching = false;
     private bool ShouldJump = false;
-    private bool AnimationShouldChange = false;
 
     private float HorizontalAxis => Input.GetAxisRaw("Horizontal");
-    private string CurrentAnimation => HorizontalMovement == 0
-        ? IDLE_ANIMATION
-        : string.Empty;
 
+    // Handle inputs
     void Update()
     {
         HorizontalMovement = HorizontalAxis * RunSpeed;
-        if (HorizontalMovement != 0)
-        {
-            AnimationShouldChange = true;
-        }
         if (Input.GetButtonDown("Jump"))
         {
             ShouldJump = true;
-            AnimationShouldChange = true;
+            CurrentTrigger = JumpTrigger;
         }
-        if (Input.GetButtonDown("Crouch"))
+        else if (Input.GetButtonDown("Crouch"))
         {
-            IsCrouch = true;
-            AnimationShouldChange = true;
+            IsCrouching = true;
+            CurrentTrigger = CrouchTrigger;
         }
-        if (Input.GetButtonUp("Crouch"))
+        else if (Input.GetButtonUp("Crouch"))
         {
-            IsCrouch = false;
-            AnimationShouldChange = true;
+            IsCrouching = false;
+            CurrentTrigger = IdleTrigger;
+        }
+        else if (Math.Abs(HorizontalMovement) > 0.01)
+        {
+            CurrentTrigger = RunTrigger;
+            Debug.Log(HorizontalMovement);
+        }
+        else
+        {
+            CurrentTrigger = IdleTrigger;
         }
     }
 
     void FixedUpdate()
     {
         var movement = HorizontalMovement * Time.fixedDeltaTime;
-        if (AnimationShouldChange)
-            Animator.Play(CurrentAnimation, 0, 0);
+        if (CurrentTrigger != LastTrigger)
+            Animator.SetTrigger(CurrentTrigger);
 
-        CharacterController.Move(movement, IsCrouch, ShouldJump);
-        AnimationShouldChange = false;
+        CharacterController.Move(movement, IsCrouching, ShouldJump);
+        LastTrigger = CurrentTrigger;
         ShouldJump = false;
     }
 }
+
+#nullable restore
