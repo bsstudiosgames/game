@@ -2,64 +2,73 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController2D : MonoBehaviour
 {
     public CharacterController2D CharacterController = default!;
     public Animator Animator = default!;
-    public float RunSpeed = 50f;
+    public float RunVelocity = 50f;
 
-    private const string IdleTrigger = nameof(IdleTrigger);
-    private const string RunTrigger = nameof(RunTrigger);
-    private const string JumpTrigger = nameof(IdleTrigger);
-    private const string CrouchTrigger = nameof(IdleTrigger);
-
-    private string LastTrigger = string.Empty;
-    private string CurrentTrigger = string.Empty;
+    private Rigidbody2D Rigidbody = default!;
     private float HorizontalMovement = 0f;
     private bool IsCrouching = false;
+    private int RemainingJumps = 2;
     private bool ShouldJump = false;
 
+    private bool IsGrounded => CharacterController.IsGrounded;
+    private float VerticalVelocity => Rigidbody.velocity.y;
+
     private float HorizontalAxis => Input.GetAxisRaw("Horizontal");
+
+    private void Start()
+    {
+        Rigidbody = GetComponent<Rigidbody2D>();
+        CharacterController.OnLandEvent.AddListener(OnLand);
+    }
+
+    private void OnLand()
+    {
+        Debug.Log("Houston, we have landed!");
+        RemainingJumps = 2;
+    }
 
     // Handle inputs
     void Update()
     {
-        HorizontalMovement = HorizontalAxis * RunSpeed;
+        HorizontalMovement = HorizontalAxis * RunVelocity;
         if (Input.GetButtonDown("Jump"))
         {
-            ShouldJump = true;
-            CurrentTrigger = JumpTrigger;
+            if (--RemainingJumps >= 0)
+            {
+                ShouldJump = true;
+                Animator.SetTrigger("JumpTrigger");
+            }
+
         }
         else if (Input.GetButtonDown("Crouch"))
         {
             IsCrouching = true;
-            CurrentTrigger = CrouchTrigger;
         }
         else if (Input.GetButtonUp("Crouch"))
         {
             IsCrouching = false;
-            CurrentTrigger = IdleTrigger;
         }
-        else if (Math.Abs(HorizontalMovement) > 0.01)
-        {
-            CurrentTrigger = RunTrigger;
-        }
-        else
-        {
-            CurrentTrigger = IdleTrigger;
-        }
+
+        var runSpeed = Math.Abs(Rigidbody.velocity.x);
+        Debug.Log(runSpeed);
+
+        Animator.SetFloat("RunSpeed", runSpeed);
+        Animator.SetBool(nameof(IsGrounded), IsGrounded);
+        Animator.SetFloat(nameof(VerticalVelocity), VerticalVelocity);
+        Animator.SetInteger(nameof(RemainingJumps), RemainingJumps);
     }
 
     // Performs actions
     void FixedUpdate()
     {
         var movement = HorizontalMovement * Time.fixedDeltaTime;
-        if (CurrentTrigger != LastTrigger)
-            Animator.SetTrigger(CurrentTrigger);
-
         CharacterController.Move(movement, IsCrouching, ShouldJump);
-        LastTrigger = CurrentTrigger;
         ShouldJump = false;
     }
 }

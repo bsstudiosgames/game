@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 33c5c01b8cd7174f1a755a071a6e166e
+guid: 0383c14599516b7269666736895833e9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_0
+      name: Main_Character_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bebfbc6a46f4a6bfbb2405dbc5e93af
+      internalID: -610936038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Character_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ec2eb6ad3756afab0eece059b4ceb3
+      internalID: 296326671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Character_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32410645821b279aaffd9eefc1b477b
+      internalID: -983455204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Character_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5182bf56f88543ba04f353a8577d72
+      internalID: 218847099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Character_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22919ec9d7e8a3c6985abc3af1fec2f3
+      internalID: 1941799669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Character_Jump_5
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ac396e9337b02c9592019b4f30ff335
-      internalID: 1850350118
+      spriteID: 1d1c8dbe1b3f92350b1f23dae57ae35f
+      internalID: 2073208002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_1
+      name: Main_Character_Jump_6
       rect:
         serializedVersion: 2
         x: 320
@@ -152,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf274648b64d46d18baf02edb4752327
-      internalID: -710987129
+      spriteID: 16625c8d3b2fd64cfb62aeefb6a6eeef
+      internalID: -2020845490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_2
+      name: Main_Character_Jump_7
       rect:
         serializedVersion: 2
         x: 640
@@ -173,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c500665d7115a9ee68386b734f20ed7d
-      internalID: 2000634961
+      spriteID: 9fda9ef0dde3ab4abab2acb0b05aaf68
+      internalID: -1740356580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_3
+      name: Main_Character_Jump_8
       rect:
         serializedVersion: 2
         x: 960
@@ -194,14 +299,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bc9f523601617e0dbf7e5d80c500baa
-      internalID: 92193312
+      spriteID: 8465e34c4c4d701bcb22ecbe3301f48b
+      internalID: -1106505741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_4
+      name: Main_Character_Jump_9
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d95fe8a89dbd10f80ca9b9705949b5
+      internalID: 1250021234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Character_Jump_10
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12ea4c46eea8831e3a6a1ef9a5e2555b
-      internalID: 613951662
+      spriteID: cad38a97a9ca066a1ac91bbedf012741
+      internalID: -1229555842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_5
+      name: Main_Character_Jump_11
       rect:
         serializedVersion: 2
         x: 320
@@ -236,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b21a4f7f0abe1d796dba346c7009f5
-      internalID: 43973465
+      spriteID: 28a0f0c25e778af85a2af98e3b2beec6
+      internalID: 1723268589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_6
+      name: Main_Character_Jump_12
       rect:
         serializedVersion: 2
         x: 640
@@ -257,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d56792ad6587fe2a85f1f3354a608ce
-      internalID: -2068822926
+      spriteID: 6bef1e83011ba34f8bfa5a1e512e7c8f
+      internalID: -1600421373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_7
+      name: Main_Character_Jump_13
       rect:
         serializedVersion: 2
         x: 960
@@ -278,14 +404,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eb2025f4c40e676682fd8bd03970b43
-      internalID: -1211192678
+      spriteID: 5f7a4efc82d377ee1b79362222e0375e
+      internalID: -1145522554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_8
+      name: Main_Character_Jump_14
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676c24f0bc42b8854baef66650af01b1
+      internalID: -1501053884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Character_Jump_15
       rect:
         serializedVersion: 2
         x: 0
@@ -299,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b2b30ca8f5467d2a89fc362541104d
-      internalID: -1801461741
+      spriteID: 76ef8720f9f24d30b9d55fa12dc49a68
+      internalID: 374628945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_Jump_Base_9
+      name: Main_Character_Jump_16
       rect:
         serializedVersion: 2
         x: 320
@@ -320,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfd287dc6d3a5183eb4220728870d7bf
-      internalID: 1257663092
+      spriteID: 6a117e342966de1e1b0e2415759f14d9
+      internalID: 2046402190
       vertices: []
       indices: 
       edges: []
@@ -337,16 +484,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Main_Character_Jump_Base_0: 1850350118
-      Main_Character_Jump_Base_1: -710987129
-      Main_Character_Jump_Base_2: 2000634961
-      Main_Character_Jump_Base_3: 92193312
-      Main_Character_Jump_Base_4: 613951662
-      Main_Character_Jump_Base_5: 43973465
-      Main_Character_Jump_Base_6: -2068822926
-      Main_Character_Jump_Base_7: -1211192678
-      Main_Character_Jump_Base_8: -1801461741
-      Main_Character_Jump_Base_9: 1257663092
+      Main_Character_Jump_0: -610936038
+      Main_Character_Jump_1: 296326671
+      Main_Character_Jump_10: -1229555842
+      Main_Character_Jump_11: 1723268589
+      Main_Character_Jump_12: -1600421373
+      Main_Character_Jump_13: -1145522554
+      Main_Character_Jump_14: -1501053884
+      Main_Character_Jump_15: 374628945
+      Main_Character_Jump_16: 2046402190
+      Main_Character_Jump_2: -983455204
+      Main_Character_Jump_3: 218847099
+      Main_Character_Jump_4: 1941799669
+      Main_Character_Jump_5: 2073208002
+      Main_Character_Jump_6: -2020845490
+      Main_Character_Jump_7: -1740356580
+      Main_Character_Jump_8: -1106505741
+      Main_Character_Jump_9: 1250021234
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
