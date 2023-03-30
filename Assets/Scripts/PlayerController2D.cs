@@ -10,21 +10,27 @@ public class PlayerController2D : MonoBehaviour
     public Animator Animator = default!;
     public float RunVelocity = 50f;
 
-    private const string RunSpeed = nameof(RunSpeed);
-    private const string JumpTrigger = nameof(JumpTrigger);
-    private const string IsGrounded = nameof(IsGrounded);
-    private const string VerticalVelocity = nameof(VerticalVelocity);
-
     private Rigidbody2D Rigidbody = default!;
     private float HorizontalMovement = 0f;
     private bool IsCrouching = false;
+    private int RemainingJumps = 2;
     private bool ShouldJump = false;
+
+    private bool IsGrounded => CharacterController.IsGrounded;
+    private float VerticalVelocity => Rigidbody.velocity.y;
 
     private float HorizontalAxis => Input.GetAxisRaw("Horizontal");
 
     private void Start()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
+        CharacterController.OnLandEvent.AddListener(OnLand);
+    }
+
+    private void OnLand()
+    {
+        Debug.Log("Houston, we have landed!");
+        RemainingJumps = 2;
     }
 
     // Handle inputs
@@ -33,8 +39,12 @@ public class PlayerController2D : MonoBehaviour
         HorizontalMovement = HorizontalAxis * RunVelocity;
         if (Input.GetButtonDown("Jump"))
         {
-            ShouldJump = true;
-            Animator.SetTrigger(JumpTrigger);
+            if (--RemainingJumps >= 0)
+            {
+                ShouldJump = true;
+                Animator.SetTrigger("JumpTrigger");
+            }
+
         }
         else if (Input.GetButtonDown("Crouch"))
         {
@@ -45,10 +55,13 @@ public class PlayerController2D : MonoBehaviour
             IsCrouching = false;
         }
 
-        Animator.SetFloat(RunSpeed, Math.Abs(HorizontalMovement));
-        Animator.SetBool(IsGrounded, CharacterController.IsGrounded);
-        Animator.SetFloat(VerticalVelocity, Rigidbody.velocity.y);
-        Debug.Log(Rigidbody.velocity.y);
+        var runSpeed = Math.Abs(Rigidbody.velocity.x);
+        Debug.Log(runSpeed);
+
+        Animator.SetFloat("RunSpeed", runSpeed);
+        Animator.SetBool(nameof(IsGrounded), IsGrounded);
+        Animator.SetFloat(nameof(VerticalVelocity), VerticalVelocity);
+        Animator.SetInteger(nameof(RemainingJumps), RemainingJumps);
     }
 
     // Performs actions
