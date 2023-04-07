@@ -136,13 +136,10 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -2150937405432942906}
     m_Position: {x: 20, y: 300, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3032066221506824162}
-    m_Position: {x: 55, y: 365, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -5123260291561291254}
-    m_Position: {x: 180, y: 370, z: 0}
+    m_Position: {x: 170, y: 380, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
@@ -165,7 +162,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: VerticalVelocity
-    m_EventTreshold: -90
+    m_EventTreshold: -40
   m_DstStateMachine: {fileID: -5123260291561291254}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -357,32 +354,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &3032066221506824162
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WalkAnimation
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 553d444321d1c0f97bb9c9c8ebfc1a29, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &4490366116063251675
 AnimatorState:
   serializedVersion: 6
@@ -518,7 +489,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a344f2c5dd7688a8cb80978a75f8553f, type: 2}
-    m_Threshold: 12
+    m_Threshold: 20
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -527,7 +498,7 @@ BlendTree:
   m_BlendParameter: RunSpeed
   m_BlendParameterY: RunSpeed
   m_MinThreshold: 0
-  m_MaxThreshold: 12
+  m_MaxThreshold: 20
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0

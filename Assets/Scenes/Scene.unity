@@ -1277,7 +1277,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4427468539514244483, guid: 32f5a00a0f6d0d3b9a8e391cc9af6200, type: 3}
       propertyPath: RunVelocity
-      value: 300
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 4427468539514244485, guid: 32f5a00a0f6d0d3b9a8e391cc9af6200, type: 3}
       propertyPath: m_Enabled
@@ -1293,7 +1293,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4427468539514244487, guid: 32f5a00a0f6d0d3b9a8e391cc9af6200, type: 3}
       propertyPath: m_MovementSmoothing
-      value: 0.4
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427468539514244505, guid: 32f5a00a0f6d0d3b9a8e391cc9af6200, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427468539514244505, guid: 32f5a00a0f6d0d3b9a8e391cc9af6200, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427468539514244505, guid: 32f5a00a0f6d0d3b9a8e391cc9af6200, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4427468539514244507, guid: 32f5a00a0f6d0d3b9a8e391cc9af6200, type: 3}
       propertyPath: m_RootOrder
