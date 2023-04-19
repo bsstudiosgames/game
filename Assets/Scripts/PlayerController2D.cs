@@ -29,7 +29,6 @@ public class PlayerController2D : MonoBehaviour
 
     private void OnLand()
     {
-        Debug.Log("Houston, we have landed!");
         RemainingJumps = 2;
     }
 
@@ -56,7 +55,7 @@ public class PlayerController2D : MonoBehaviour
         }
 
         var runSpeed = Math.Abs(Rigidbody.velocity.x);
-        Debug.Log(runSpeed);
+        Debug.Log(VerticalVelocity);
 
         Animator.SetFloat("RunSpeed", runSpeed);
         Animator.SetBool(nameof(IsGrounded), IsGrounded);
